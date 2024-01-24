@@ -1,4 +1,4 @@
-package com.matheusResio.workshopmongo.resource;
+package com.matheusResio.workshopmongo.resources;
 
 import java.net.URI;
 import java.util.List;

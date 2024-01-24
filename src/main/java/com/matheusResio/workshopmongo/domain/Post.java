@@ -14,7 +14,7 @@ import com.matheusResio.workshopmongo.dto.AuthorDTO;
 import com.matheusResio.workshopmongo.dto.CommentDTO;
 
 
-@Document(collection = "posts")
+@Document(collection = "post")
 public class Post implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
