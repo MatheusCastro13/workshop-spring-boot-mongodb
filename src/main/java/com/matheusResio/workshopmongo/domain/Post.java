@@ -4,11 +4,18 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.matheusResio.workshopmongo.dto.AuthorDTO;
+
+
+@Document(collection = "posts")
 public class Post implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@Id
 	private String id;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
@@ -16,13 +23,13 @@ public class Post implements Serializable{
 	private String title;
 	private String body;
 	
-	private User author;
+	private AuthorDTO author;
 	
 	public Post() {
 		
 	}
 	
-	public Post(String id, Instant date, String title, String body, User author) {
+	public Post(String id, Instant date, String title, String body, AuthorDTO author) {
 		super();
 		this.id = id;
 		this.date = date;
@@ -56,10 +63,10 @@ public class Post implements Serializable{
 		this.body = body;
 	}
 	
-	public User getUser() {
+	public AuthorDTO getUser() {
 		return author;
 	}
-	public void setUser(User author) {
+	public void setUser(AuthorDTO author) {
 		this.author = author;
 	}
 	
