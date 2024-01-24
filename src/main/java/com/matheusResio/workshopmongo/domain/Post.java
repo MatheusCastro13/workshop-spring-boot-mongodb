@@ -85,7 +85,5 @@ public class Post implements Serializable{
 		Post other = (Post) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
 
 }
